@@ -16,11 +16,11 @@ public class POM_Exercise1 {
     public void after(){
         pom.teardown();
     }
+
     @Test
-    public void bingtest() throws InterruptedException {
+    public void bingvsyahootest() throws InterruptedException {
         pom.visit("https://www.bing.com/");
         pom.Bingsearch("perro");
-        pom.teardown();
         pom.visit("https://espanol.yahoo.com/?p=us");
         pom.yahoosearch("perro");
     }

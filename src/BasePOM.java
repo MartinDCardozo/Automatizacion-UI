@@ -2,7 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.DataProvider;
+
 
 import java.util.List;
 
@@ -52,10 +52,5 @@ public class BasePOM {
         driver.get(url);
     }
 
-    @DataProvider(name="pome1")
-    public Object[][] Somethingtosearch(){
-        Object[][] Something ={{"perro"}};
-        return Something;
 
-    }
 }
