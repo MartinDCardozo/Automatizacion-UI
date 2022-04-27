@@ -22,7 +22,6 @@ public class BasePOM {
     public WebElement findElement(By locator){
         return driver.findElement(locator);
     }
-
     public List<WebElement> findElements(By locator){
         return driver.findElements(locator);
     }
@@ -46,11 +45,13 @@ public class BasePOM {
         }
     }
     public void teardown(){
-        driver.close();
+        driver.quit();
     }
     public void visit(String url){
         driver.get(url);
     }
+    public String gethref(By locator){return driver.findElement(locator).getAttribute("href");}
+
 
 
 }
