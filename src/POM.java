@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Sleeper;
 
 public class POM extends BasePOM {
 
@@ -16,13 +17,22 @@ public class POM extends BasePOM {
    By MLOfertas = By.linkText("Ofertas");
    By MLproductname = By.xpath("//*[@id='root-app']/div/section[2]/div/div[2]/div/ol/li[1]/a/div/div/p");
    By MLpercent = By.xpath("//*[@id='root-app']/div/section[2]/div/div[2]/div/ol/li[1]/a/div/div/div[2]/div/span");
-   By MLprice = By.xpath("//*[@id='root-app']/div/section[2]/div/div[2]/div/ol/li[1]/a/div/div/div[2]/span/span");
+   By MLprice = By.xpath("//*[@id='root-app']/div/section[2]/div/div[2]/div/ol/li[1]/a/div/div/div[2]/span");
    By MLproduct = By.xpath("//*[@id='root-app']/div/section[2]/div/div[2]/div/ol/li[1]/a");
    By MLproductname1 = By.xpath("//*[@id='root-app']/div/div[4]/div/div[1]/div/div[1]/div/div[1]/div/div[2]/h1");
-   By MLpercent1 = By.xpath("//*[@id='root-app']/div/div[4]/div/div[1]/div/div[1]/div/div[2]/div/div[1]/div/span[2]/span");
-   By MLprice1 = By.xpath("//*[@id='root-app']/div/div[4]/div/div[1]/div/div[1]/div/div[2]/div/div[1]/div/span[1]/span[3]");
-   By MLpriceus1 = By.xpath("//*[@id='root-app']/div/div[4]/div/div[1]/div/div[1]/div/div[2]/div/div[1]/div/span[1]/span[2]");
-
+   By MLpercent1 = By.xpath("//*[@id='root-app']/div/div[4]/div/div[1]/div/div[1]/div/div[3]/div/div[1]/span[2]/span");
+   By MLprice1 = By.xpath("//*[@id='root-app']/div/div[4]/div/div[1]/div/div[1]/div/div[3]/div/div[1]/span[1]/span[3]");
+   By MLpriceus1 = By.xpath("//*[@id='root-app']/div/div[4]/div/div[1]/div/div[1]/div/div[3]/div/div[1]/span[1]/span[2]");
+   By MLmejorestiendas2doE = By.xpath("//*[@id='view-more']");
+   By MLtienda = By.xpath("//*[@id='root-app']/div/div/section[9]/div/div[2]/div/div[1]/div/div[2]/div");
+   By MLpagename = By.xpath("//*[@id='root-app']/div/div[2]/aside/div[1]/h1");
+   By PYuruguay = By.xpath("//*[@id='country_list']/div/div[14]/div/a");
+   By PYsearchbtn = By.id("location_search_btn");
+   By PYadressinput = By.id("search_address_input");
+   By PYpopup = By.id("confirm_location_btn");
+   By PYplace = By.xpath("//*[@id='app']/div/div[2]/div[2]/div/div[1]/div[5]/a[1]");
+   By PYerror = By.id("error__container__action");
+   By PYhold =By.id("ISSyKzSlUpSmnql");
 
 
    public POM(WebDriver driver) {
@@ -68,33 +78,44 @@ public class POM extends BasePOM {
       }
    }
 
-   public void MLsearch() throws InterruptedException {
+   public void MLexercise1() {
       click(MLOfertas);
       String productname = getText(MLproductname);
       String percent = getText(MLpercent);
       String price = getText(MLprice);
-      if (isDisplayed(MLproduct)) {
+      if(isDisplayed(MLproduct)){
          String href = gethref(MLproduct);
          visit(href);
       }
-      if (productname.equals(getText(MLproductname1))) {
+      if(productname.equals(getText(MLproductname1))){
          System.out.println("Name match");
-      }else {
-         System.out.println("error");
-      }if(percent.equals(getText(MLpercent1))){
+      }
+      if(percent.equals(getText(MLpercent1))){
          System.out.println("Percent match");
-      }else {
-         System.out.println("error");
       }
-      String fullprice = getText(MLpriceus1)+getText(MLprice1);
+      String fullprice = getText(MLpriceus1) + getText(MLprice1);
       String newprice = price.replaceAll("\\s", "");
-      if(newprice.equals(fullprice)){
+      if (newprice.equals(fullprice)){
          System.out.println("Price match");
-      }else{
-         System.out.println("error");
       }
-
-      }
-
 
    }
+
+   public void MLexercise2() {
+      String vertiendas = gethref(MLmejorestiendas2doE);
+      visit(vertiendas);
+      if (currenturl().equals(vertiendas)) {
+         System.out.println("match");
+      } else {
+         System.out.println("error");
+      }
+   }
+
+ ///  public void PYexercise3() throws InterruptedException {
+  ///    move(PYuruguay);
+ ///     click(PYuruguay);
+ ///     Thread.sleep(5000);
+ ///  } THE PEDIDOSYA WEBSITE HAS BEEN UPDATED AND IS NO LONGER VIABLE FOR USE AUTOMATED SOFTWARE ON IT
+   ///  , THE MOMENT THE WEBDRIVER TAKES CONTROL THE PAGE LEADES YOU TO A KIND OF CAPTCHA FOR PREVENT DE USE OF
+   /// AUTOMATED SOFTWARE . IN SEVERAL ATTEMPTS IF THE SCRIPT PASS THE COUNTRY SELECTION , GETS STUCK RIGHT AFTER THAT.
+}

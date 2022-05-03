@@ -12,10 +12,22 @@ public class POM_Exercise2 {
         driver = pom.ChromeConnection();
     }
     @Test
-    public void MLtest() throws InterruptedException {
+    public void MLExercise1() throws InterruptedException {
         pom.visit("https://www.mercadolibre.com.uy/");
-        pom.MLsearch();
+        pom.MLexercise1();
     }
+    @Test
+    public void MLExercise2(){
+        pom.visit("https://www.mercadolibre.com.uy/");
+        pom.MLexercise2();
+
+    }
+  /// @Test
+  ///  public void Exercise3() throws InterruptedException {
+  ///      pom.visit("https://www.pedidosya.com/");
+  ///      pom.PYexercise3();
+
+  ///  }
     @AfterTest
     void teardown(){
         pom.teardown();

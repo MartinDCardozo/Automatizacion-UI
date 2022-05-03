@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 
 import java.util.List;
@@ -18,6 +19,8 @@ public class BasePOM {
         driver = new ChromeDriver();
         return driver;
     }
+
+
 
     public WebElement findElement(By locator){
         return driver.findElement(locator);
@@ -51,6 +54,14 @@ public class BasePOM {
         driver.get(url);
     }
     public String gethref(By locator){return driver.findElement(locator).getAttribute("href");}
+    public String currenturl(){return driver.getCurrentUrl();}
+    public String getsrc(By locator){return driver.findElement(locator).getAttribute("src");}
+    public void move(By locator){
+        Actions actions = new Actions(driver);
+        actions.moveToElement(driver.findElement(locator));
+    }
+
+
 
 
 
