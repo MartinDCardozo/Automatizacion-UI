@@ -26,8 +26,10 @@ public class POM_Exercise2 {
   ///  public void Exercise3() throws InterruptedException {
   ///      pom.visit("https://www.pedidosya.com/");
   ///      pom.PYexercise3();
-
-  ///  }
+  ///THE PEDIDOSYA WEBSITE HAS BEEN UPDATED AND IS NO LONGER VIABLE FOR USE AUTOMATED SOFTWARE ON IT
+  /// ,THE MOMENT THE WEBDRIVER TAKES CONTROL THE PAGE LEADES YOU TO A KIND OF CAPTCHA FOR PREVENT DE USE OF
+  ///AUTOMATED SOFTWARE . IN SEVERAL ATTEMPTS IF THE SCRIPT PASS THE COUNTRY SELECTION , GETS STUCK RIGHT AFTER THAT.
+  ///
     @AfterTest
     void teardown(){
         pom.teardown();
