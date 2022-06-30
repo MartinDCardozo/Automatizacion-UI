@@ -15,7 +15,7 @@ public class BasePOM {
         this.driver = driver;
     }
     public WebDriver ChromeConnection(){
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\tinch\\Downloads\\chromedriver_win32 (2)\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\tinch\\Downloads\\chromedriver_win32 (1)\\chromedriver.exe");
         driver = new ChromeDriver();
         return driver;
     }

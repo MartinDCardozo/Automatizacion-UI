@@ -33,6 +33,9 @@ public class POM extends BasePOM {
    By PYplace = By.xpath("//*[@id='app']/div/div[2]/div[2]/div/div[1]/div[5]/a[1]");
    By PYerror = By.id("error__container__action");
    By PYhold =By.id("ISSyKzSlUpSmnql");
+   By recomendarbtn = By.id("download-button");
+   By primertrago = By.xpath("/html/body/div[2]/div/div/div[1]/div/div[1]/a");
+   By nombretrago = By.id("nombre");
 
 
    public POM(WebDriver driver) {
@@ -116,4 +119,16 @@ public class POM extends BasePOM {
  ///     click(PYuruguay);
  ///     Thread.sleep(5000);
  ///  }
+
+
+   public void APIexercise1() throws InterruptedException {
+      visit("https://cyf-2020.firebaseapp.com/");
+      click(recomendarbtn);
+      Thread.sleep(2000);
+      click(primertrago);
+      getText(nombretrago);
+
+
+
+   }
 }
